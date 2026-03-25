@@ -22,6 +22,9 @@ def show_login():
 
     st.divider()
 
+    # Kita buat container kosong di luar form untuk pesan error
+    placeholder = st.empty()
+
     with st.form("form_login"):
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
@@ -30,14 +33,14 @@ def show_login():
         if submit:
             if not username or not password:
                 st.warning("Username and password are required")
-                return
+            else:
+                with st.spinner("Authenticating..."):
+                    user = login_proses(username, password)
 
-            with st.spinner("Authenticating..."):
-                user = login_proses(username, password)
-
-                if user:
-                    st.session_state['user_data'] = user
-                    st.success(f"Welcome, {user.get('nama_lengkap', username)}")
-                    st.rerun()
-                else:
-                    st.error("Invalid username or password")
+                    if user:
+                        st.session_state['user_data'] = user
+                        st.success(f"Welcome, {user.get('nama_lengkap', username)}")
+                        st.rerun()
+                    else:
+                        # Pesan ini akan muncul jika login_proses return None
+                        st.error("Invalid username or password")
