@@ -1,15 +1,30 @@
 import streamlit as st
-from login import show_login  # Pastikan path import benar
 
-# Inisialisasi Session State
+st.set_page_config(page_title="Survei Harga", layout="centered")
+
+st.markdown("""
+    <style>
+        [data-testid="stSidebar"], 
+        [data-testid="stSidebarNav"],
+        [data-testid="stSidebarCollapseButton"] {
+            display: none !important;
+            width: 0px !important;
+        }
+        .main .block-container {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 600px;
+        }
+        header {
+            visibility: hidden;
+            height: 0px;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 if 'user_data' not in st.session_state:
+    from pages.login import show_login
     show_login()
 else:
-    # TAMPILAN SETELAH LOGIN BERHASIL
-    user = st.session_state['user_data']
-    st.title(f"Dashboard {user['role']}")
-    st.write(f"Selamat datang kembali, **{user['nama_lengkap']}** (Cabang: {user['cabang']})")
-    
-    if st.button("Logout"):
-        del st.session_state['user_data']
-        st.rerun()
+    from pages.dashboard import show_dashboard
+    show_dashboard()
