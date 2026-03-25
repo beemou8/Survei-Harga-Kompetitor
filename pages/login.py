@@ -6,7 +6,7 @@ if "user_data" not in st.session_state:
     st.session_state["user_data"] = None
 
 def show_login():
-    st.title("📊 Survei Harga")
+    st.title("📊 Survei Babi")
     st.caption("Silakan login untuk mengakses dashboard")
     st.divider()
 
