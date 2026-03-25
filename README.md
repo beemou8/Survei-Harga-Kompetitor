@@ -1,3 +1,4 @@
+
 # 📊 Survei Harga Kompetitor
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_svg.svg)](https://share.streamlit.io/)  
@@ -35,24 +36,26 @@ Aplikasi manajemen survei harga kompetitor untuk operasional lapangan. Memungkin
 
 ## 📂 Struktur Proyek
 
+```
 
 survei-harga/
-├── app.py # Main entry & routing
-├── requirements.txt # Dependencies aplikasi
-├── .env # Environment variables lokal
-├── .gitignore # File yang diabaikan Git
+├── app.py                 # Main entry & routing
+├── requirements.txt       # Dependencies aplikasi
+├── .env                   # Environment variables lokal
+├── .gitignore             # File yang diabaikan Git
 ├── services/
-│ └── auth.py # Logika autentikasi & verifikasi bcrypt
+│   └── auth.py            # Logika autentikasi & verifikasi bcrypt
 ├── pages/
-│ ├── login.py # UI login
-│ ├── dashboard.py # Sidebar & navigasi utama
-│ ├── input_data.py # Form input & kompresi foto struk
-│ ├── history_data.py # Visualisasi tabel & filter data
-│ ├── add_user.py # Admin: tambah pengguna baru
-│ └── edit_user.py # Admin: edit pengguna
+│   ├── login.py           # UI login
+│   ├── dashboard.py       # Sidebar & navigasi utama
+│   ├── input_data.py      # Form input & kompresi foto struk
+│   ├── history_data.py    # Visualisasi tabel & filter data
+│   ├── add_user.py        # Admin: tambah pengguna baru
+│   └── edit_user.py       # Admin: edit pengguna
 └── assets/
-└── css/ # Kustomisasi tema dark mode & layout
+└── css/               # Kustomisasi tema dark mode & layout
 
+````
 
 ---
 
@@ -62,40 +65,71 @@ survei-harga/
 ```bash
 git clone https://github.com/beemou8/survei-harga.git
 cd survei-harga
-Install dependencies
+````
+
+2. **Install dependencies**
+
+```bash
 pip install -r requirements.txt
-Setup environment
-Buat file .env di root folder:
+```
+
+3. **Setup environment**
+   Buat file `.env` di root folder:
+
+```env
 SUPABASE_URL=https://project-id.supabase.co
 SUPABASE_KEY=your-anon-key-here
-Jalankan aplikasi
+```
+
+4. **Jalankan aplikasi**
+
+```bash
 streamlit run app.py
-☁️ Deployment (Streamlit Cloud)
-Hubungkan repository ke Streamlit Cloud
-.
-Masukkan Secrets di menu Advanced Settings:
+```
+
+---
+
+### ☁️ Deployment (Streamlit Cloud)
+
+1. Hubungkan repository ke [Streamlit Cloud](https://share.streamlit.io/).
+2. Masukkan **Secrets** di menu Advanced Settings:
+
+```toml
 SUPABASE_URL = "https://your-project.supabase.co"
 SUPABASE_KEY = "your-anon-key"
-Klik Deploy dan tunggu selesai.
-🗄 Skema Database (Supabase)
+```
 
-Tabel users
+3. Klik **Deploy** dan tunggu selesai.
 
-username (text, Unique)
-password_hash (text)
-nama_lengkap (text)
-cabang (text)
-role (text: admin/user)
+---
 
-Tabel survei
+## 🗄 Skema Database (Supabase)
 
-nama_barang (text)
-nama_kompetitor (text)
-harga (numeric)
-foto_struk (text/URL)
-nama_user (text)
-cabang (text)
-📧 Kontak & Developer
-Developer: beemou8 (EDP 2T Katapang)
-Email: dimasbimo19@gmail.com
-GitHub: @beemou8
+**Tabel `users`**
+
+* `username` (text, Unique)
+* `password_hash` (text)
+* `nama_lengkap` (text)
+* `cabang` (text)
+* `role` (text: admin/user)
+
+**Tabel `survei`**
+
+* `nama_barang` (text)
+* `nama_kompetitor` (text)
+* `harga` (numeric)
+* `foto_struk` (text/URL)
+* `nama_user` (text)
+* `cabang` (text)
+
+---
+
+## 📧 Kontak & Developer
+
+* Developer: **beemou8 (EDP 2T Katapang)**
+* Email: [dimasbimo19@gmail.com](mailto:dimasbimo19@gmail.com)
+* GitHub: [@beemou8](https://github.com/beemou8)
+
+```
+
+
