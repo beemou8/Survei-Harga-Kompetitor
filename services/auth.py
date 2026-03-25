@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 
 # ambil config dari .env
 load_dotenv()
-URL = os.getenv("SUPABASE_URL")
-KEY = os.getenv("SUPABASE_KEY")
+url = st.secrets.get("SUPABASE_URL") or os.getenv("SUPABASE_URL")
+key = st.secrets.get("SUPABASE_KEY") or os.getenv("SUPABASE_KEY")
 
 def login_proses(username, password):
     """
