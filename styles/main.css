@@ -1,0 +1,90 @@
+/* Reset & Background */
+html, body, [class*="css"] {
+    background-color: #0f172a;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Centering */
+.block-container {
+    max-width: 420px;
+    margin: auto;
+    padding-top: 4rem;
+}
+
+/* Card */
+.card {
+    background: #111827;
+    padding: 28px 24px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Title */
+.title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+}
+
+/* Subtitle */
+.subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #9ca3af;
+    margin-bottom: 24px;
+}
+
+/* Input label */
+label {
+    color: #d1d5db !important;
+    font-size: 13px !important;
+    margin-bottom: 6px;
+}
+
+/* Input */
+.stTextInput input {
+    background-color: #1f2937 !important;
+    color: white !important;
+    border-radius: 12px !important;
+    border: 1px solid #374151 !important;
+    padding: 12px !important;
+}
+
+/* Focus effect */
+.stTextInput input:focus {
+    border: 1px solid #6366f1 !important;
+    box-shadow: 0 0 0 1px #6366f1;
+}
+
+/* Button */
+.stButton button {
+    width: 100%;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    color: white;
+    font-weight: 600;
+    padding: 12px;
+    border: none;
+    margin-top: 10px;
+}
+
+/* Button hover */
+.stButton button:hover {
+    opacity: 0.95;
+}
+
+/* Alert */
+.stAlert {
+    border-radius: 12px;
+}
+
+/* Mobile fix */
+@media (max-width: 480px) {
+    .block-container {
+        padding-top: 2rem;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
