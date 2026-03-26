@@ -126,7 +126,7 @@ SUPABASE_KEY = "your-anon-key"
 
 ## 📧 Kontak & Developer
 
-* Developer: **beemou8 (EDP 2T Katapang)**
+* Developer: **beemou8**
 * Email: [dimasbimo19@gmail.com](mailto:dimasbimo19@gmail.com)
 * GitHub: [@beemou8](https://github.com/beemou8)
 
